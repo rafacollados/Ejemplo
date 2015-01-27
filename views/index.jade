@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+block title
+	title Article Title #{title}
+
+block content
+	- var name = 'prueba loca';
+	- var name2 = '<span>prueba muy loca</span>';
+	- var authors = [ {name: 'oscar', tutorial: 'iOS'}, {name: 'carlos', tutorial: 'django'}, {name: 'alberto', tutorial: 'git'}, {name: 'jonathan', tutorial: 'how to'}, {name: 'ricardo', tutorial: 'rails'}, {name: 'ramses', tutorial: 'php'}];
+	
+	mixing authorInfo(authorObject)
+		li Autor: #{ authorObject.name } - Curso: #{ authorObject.tutorial }
+
+	h1= title
+
+	span Tu nombre usuario es: #{username}
+
+	#content
+		ul
+			li Que es esto? Es: #{name}
+			li y esto? Es: !{name2} 
+				a(href="/delete") x
+		ul
+			each author in authors
+				+authorInfo(author)

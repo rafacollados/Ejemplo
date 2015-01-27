@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-//Definición puerto por defecto
+//Definición puerto por defecto de la app
 app.set('port', process.env.PORT || 3000);
 
 //Definición de vistas
